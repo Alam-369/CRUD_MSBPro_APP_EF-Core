@@ -1,0 +1,6 @@
+@MSBProCrudApp_HostAddress = http://localhost:5145
+
+GET {{MSBProCrudApp_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
