@@ -39,14 +39,14 @@ public class TodoController(ITodoRepository _repo, IMapper _mapper) : Controller
         }
     }
 
-    [HttpGet]
+    [HttpGet("{id}")]
     public async Task<ActionResult<Todos>> GetTodo([FromRoute] int id)
     {
         var todo = await _repo.GetByIdAsync(id);
 
         if (todo is null)
         {
-            return NotFound();
+            return StatusCode(500, new { message = "Not Found" });
         }
         else
         {
@@ -66,6 +66,7 @@ public class TodoController(ITodoRepository _repo, IMapper _mapper) : Controller
         {
             var todo = _mapper.Map<Todos>(req);
             await _repo.AddAsync(todo);
+            await _repo.SaveChangesAsync();
             return StatusCode(200, new { msg = "Todo is successfully created" });
         }
         catch (DbUpdateException ex)
@@ -79,7 +80,7 @@ public class TodoController(ITodoRepository _repo, IMapper _mapper) : Controller
         }
         catch (Exception ex)
         {
-            return StatusCode(500, new { message = "Internal Server Error" });
+            return StatusCode(500, new { message = ex.Message });
         }
     }
 

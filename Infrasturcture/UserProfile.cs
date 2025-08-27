@@ -13,9 +13,12 @@ public class UserProfile : Profile
             .ForMember(dest => dest.Password, opt => opt.MapFrom(src => src.Password))
             .ForMember(dest => dest.Username, opt => opt.MapFrom(src => src.Username));
 
-        CreateMap<Todos, TodoRequest>()
-            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
-            .ForMember(dest => dest.Details, opt => opt.MapFrom(src => src.Details));
+        CreateMap<TodoRequest, Todos>()
+            .ForMember(dest => dest.UId, opt => opt.MapFrom(src => src.UId))
+            .ForMember(dest => dest.UId, opt => opt.MapFrom(src => src.Id))
+            .ForMember(dest => dest.Details, opt => opt.MapFrom(src => src.Details))
+            .ForMember(dest => dest.CreatedAt, opt => opt.Ignore())
+            .ForMember(dest => dest.UpdatedAt, opt => opt.Ignore());
 
     }
 }

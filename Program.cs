@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using MSBProCrudApp.Repository;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,7 @@ builder.Services.Configure<Configuration>(builder.Configuration);
 //App Helpers
 builder.Services.AddScoped<ISha256Helper, Sha256Helper>();
 builder.Services.AddScoped<IJWTTokenHelper, JWTTokenHelper>();
+builder.Services.AddScoped<ITodoRepository, TodoRepository>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString")));
