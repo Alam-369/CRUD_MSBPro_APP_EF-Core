@@ -1,0 +1,224 @@
+{
+	"info": {
+		"_postman_id": "2ed28a0a-abb4-47bc-b655-27c72ac59a58",
+		"name": "MSBPro",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47896310",
+		"_collection_link": "https://katha-alam-s-team.postman.co/workspace/Team-Workspace~ac60ac27-3bdf-461a-89a1-08a13ec9d49f/collection/47896310-2ed28a0a-abb4-47bc-b655-27c72ac59a58?action=share&source=collection_link&creator=47896310"
+	},
+	"item": [
+		{
+			"name": "SignUp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"bob-12\",\n    \"email\": \"bob@email@com\",\n    \"password\": \"1232111\",\n    \"fname\": \"Bob\",\n    \"lname\": \"Anderson\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5145/api/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5145",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"bob-12\",\n    \"password\": \"1232111\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5145/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5145",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllTodos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJib2JAZW1haWxAY29tIiwidW5pcXVlX25hbWUiOiJib2ItMTIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImJvYkBlbWFpbEBjb20iLCJuYmYiOjE3NTYxNDcwMTUsImV4cCI6MTc1NjE1MDYxNSwiaXNzIjoiTVNCUFJPQVBQIiwiYXVkIjoiR0VORVJBTF9VU0VSIn0.ESFQdSnCgAgdl4yDPr0qPDU20dyXP-voGfvWW_yx6fk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5145/api/Todo?gid=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5145",
+					"path": [
+						"api",
+						"Todo"
+					],
+					"query": [
+						{
+							"key": "gid",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTodos By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJib2JAZW1haWxAY29tIiwidW5pcXVlX25hbWUiOiJib2ItMTIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImJvYkBlbWFpbEBjb20iLCJuYmYiOjE3NTYxNDcwMTUsImV4cCI6MTc1NjE1MDYxNSwiaXNzIjoiTVNCUFJPQVBQIiwiYXVkIjoiR0VORVJBTF9VU0VSIn0.ESFQdSnCgAgdl4yDPr0qPDU20dyXP-voGfvWW_yx6fk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5145/api/Todo/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5145",
+					"path": [
+						"api",
+						"Todo",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Todos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJib2JAZW1haWxAY29tIiwidW5pcXVlX25hbWUiOiJib2ItMTIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImJvYkBlbWFpbEBjb20iLCJuYmYiOjE3NTYxNDcwMTUsImV4cCI6MTc1NjE1MDYxNSwiaXNzIjoiTVNCUFJPQVBQIiwiYXVkIjoiR0VORVJBTF9VU0VSIn0.ESFQdSnCgAgdl4yDPr0qPDU20dyXP-voGfvWW_yx6fk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"details\": \"The fist task\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5145/api/Todo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5145",
+					"path": [
+						"api",
+						"Todo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Todo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJib2JAZW1haWxAY29tIiwidW5pcXVlX25hbWUiOiJib2ItMTIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImJvYkBlbWFpbEBjb20iLCJuYmYiOjE3NTYxNDcwMTUsImV4cCI6MTc1NjE1MDYxNSwiaXNzIjoiTVNCUFJPQVBQIiwiYXVkIjoiR0VORVJBTF9VU0VSIn0.ESFQdSnCgAgdl4yDPr0qPDU20dyXP-voGfvWW_yx6fk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"details\": \"The fist task\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5145/api/Todo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5145",
+					"path": [
+						"api",
+						"Todo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Todo",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
